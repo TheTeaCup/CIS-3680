@@ -1,4 +1,5 @@
 # BMI Calculator
+# Hunter Wilson
 
 weight = float(input("Please enter weight (pounds): "))
 
