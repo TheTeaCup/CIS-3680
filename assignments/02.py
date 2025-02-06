@@ -1,6 +1,5 @@
 """
-PA 02 - Hunter Wilson 
---------------------------------
+Assignment #02 - Hunter Wilson
 An object's momentum is its mass multiplied by its velocity. 
 The kinetic energy of an object is defined as 
 KE = (1/2)mv2 where m is the object's mass and v is its velocity. 
