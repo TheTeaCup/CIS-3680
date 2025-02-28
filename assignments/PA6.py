@@ -20,7 +20,7 @@ def main():
     fileName = input("Enter the file name: ")
     file = open(fileName, 'r')
 
-    print("Name\t\tHours\t\tTotal Pay")
+    print("Name\t\tHours\tTotal Pay")
     for line in file:
         words = line.split()
         name = words[0]
@@ -28,7 +28,9 @@ def main():
         hours = words[2]
         pay = float(wage) * float(hours)
 
-        print(f'{name}\t\t{hours}\t\t{pay:.2f}')
-
+        if len(name) >= 8:
+            print(name + "\t" + str(hours) + "\t" + f"{pay:.2f}")
+        else:
+            print(name + "\t\t" + str(hours) + "\t" + f"{pay:.2f}")
 
 main()
