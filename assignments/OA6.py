@@ -20,17 +20,26 @@ def main():
     file = open(fileName, 'r')
 
     missingValues = 0
-    validValues = 0
-    minValues = 0
-    maxValues = 0
-    meanValues = 0 
+    validValues = []
+    minValue = 0
+    maxValue = 0
+    meanValue = 0 
 
     for line in file:
-        print(line)
-
         if line.startswith('-'):
             missingValues = missingValues + 1
+        else:
+            validValues.append(float(line))
 
-    print('Missing Values', missingValues)
+    minValue = min(validValues)
+    maxValue = max(validValues)
+    meanValue = statistics.mean(validValues)
 
-main()
+    print('Missing Values:', missingValues)
+    print('Valid Values:', len(validValues))
+    print('Min:', minValue)
+    print('Max:', maxValue)
+    print(f'Mean: {meanValue:.4f}')
+
+if __name__ == "__main__":
+    main()
