@@ -20,6 +20,7 @@ def main():
     t = Turtle()
     t.shape("turtle")
     randomWalk(t, 40, 30)
+    input("Press enter to continue...")
 
 if __name__ == "__main__":
     main()
