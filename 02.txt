@@ -1,0 +1,4 @@
+"""
+for each batch of bolt produced 10 are randomly selected. in order to pass the mean of the sample must be 4.00 +/- 0.125 inches and there must not be more than 2 individual bolts with lengths outside this range.
+once the 10 bolts have been read from the file output the mean, a message indicating if the batch passes/fails based on the mean, the number of bolts outside the tolerance range, and a message indicating if the batch passes/fails based on the number of bolts outside tolerance.
+"""
