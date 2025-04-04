@@ -1,11 +1,8 @@
-# PA #8 - Hunter Wilson
+# OA #8 - Hunter Wilson
 """
-Add three methods to the Student class that compare two Student objects. 
-One method should test for equality. 
-A second method should test for less than. 
-The third method should test for greater than or equal to. 
-In each case, the method returns the result of the comparison of the two students names. 
-Include a main function that tests all of the comparison operators.
+This project assumes that you have completed PA 8. 
+Place several Student objects into a list and shuffle it. 
+Then run the sort method with this list and display all of the students information.
 """
 
 class Student(object):
@@ -60,26 +57,22 @@ def main():
     student1 = Student("Ken", 4)
     student2 = Student("Ed", 4)
     student3 = Student("Ken", 4)
+    student4 = Student("Hunter", 4)
     
     for i in range(1, 5):
         student1.setScore(i, 100)
-
-    for i in range(1, 5):
         student2.setScore(i, 85)
-
-    for i in range(1, 5):
         student3.setScore(i, 100)
+        student4.setScore(i, 75)
         
-    print(student1)
-    print(student2)
-    print(student3)
+    studentList = [student1, student2, student3, student4]
+    studentList.sort()
 
-    print("\nComparisons:")
-    print(f"Student 1 == Student 2: {student1 == student2}")
-    print(f"Student 1 == Student 3: {student1 == student3}")
-    print(f"Student 1 < Student 2: {student1 < student2}")
-    print(f"Student 1 >= Student 2: {student1 >= student2}")
-    print(f"Student 2 >= Student 1: {student2 >= student1}")
+    print("Sorted List:\n")
+    for student in studentList:
+        print(student, "\n")
+
+    
 
 if __name__ == "__main__":
     main()
