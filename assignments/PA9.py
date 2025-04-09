@@ -19,25 +19,33 @@ class TemperatureConverter(EasyFrame):
         """Sets up the window and widgets."""
         EasyFrame.__init__(self, title = "Temperature Converter")
 
-        self.addLabel(text="Test", row=1, column=0)
+        # Labels
+        self.addLabel(text="Fahrenheit", row=0, column=0)
+        self.addLabel(text="Celsius", row=0, column=1)
 
-        # self.addLabel (Label for Celsius)
-        # self.celsiusField (Celsius field)
-        # self.addLabel (Label for Fahrenheit)
-        # self.fahrField (Fahrenheit field)
-        # self.addButton (Celsius button)
-        # self.addButton (Fahrenheit button)
+        # Entry Fields
+        self.fahrField = self.addFloatField(value=32.0, row=1, column=0, width=10)
+        self.celsiusField = self.addFloatField(value=0, row=1, column=1, width=10)
+
+        # Buttons
+        self.addButton(text="<<<<", row=2, column=1, command=self.computeFahr)
+        self.addButton(text=">>>>", row=2, column=0, command=self.computeCelsius)
 
     # The controller methods
     def computeFahr(self):
         """Inputs the Celsius degrees
         and outputs the Fahrenheit degrees."""
+        celsius = self.celsiusField.getNumber()
+        fahrenheit = (celsius * 9 / 5) + 32
+        self.fahrField.setNumber(fahrenheit)
       
 
     def computeCelsius(self):
         """Inputs the Fahrenheit degrees
         and outputs the Celsius degrees."""
-        
+        fahrenheit = self.fahrField.getNumber()
+        celsius = (fahrenheit - 32) * 5 / 9
+        self.celsiusField.setNumber(celsius)
         
 def main():
     """Instantiate and pop up the window."""
